@@ -1,2 +1,2 @@
 # ansible
-anisble playbooks for infra automation
+These playbooks can be used for AWS Infra orchestration.
