@@ -1,0 +1,28 @@
+# ec2 provisioning from AWS 
+
+---
+  - name: ec2 provision
+    hosts: localhost
+    connection: localhost
+    gather_facts: false
+    tasks:
+      - name: Linux server provision
+        ec2:
+          instance_type: t2.micro
+          image: ami-0d6ba217f554f6137
+          region: ap-southeast-1
+          aws_access_key: AKIAWRZRGSLKDAM7OLZP
+          aws_secret_key: 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
+          instance_tags:
+           Name: Linux
+
+
+      - name: Windows server provision
+        ec2:
+          instance_type: t2.micro
+          image: ami-086bf6ac4c447df2d
+          region: ap-southeast-1
+          aws_access_key: AKIAWRZRGSLKDAM7OLZP
+          aws_secret_key: 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
+          instance_tags:
+           Name: Windows

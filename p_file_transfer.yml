@@ -1,0 +1,12 @@
+# To copy a file to managed nodes.
+---
+- name: Using the copy module
+  hosts: all
+  tasks:
+  - name: Copy a file to managed hosts and set attributes
+    copy:
+      src: /root/users.txt
+      dest: /tmp/users.txt
+      owner: root
+      group: root
+      mode: u+rw,g-wx,o-rw

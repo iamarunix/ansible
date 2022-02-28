@@ -1,0 +1,14 @@
+# Deploy code by retrieving from Github 
+---
+  - name: Launch HTML application from GitHub Repo
+    hosts: 172.31.11.64
+    vars_files:
+       - secret.yml
+    vars:
+       - destdir: /var/www/html
+    tasks:
+       - name: Download PKG
+         become: yes
+         git:
+            repo: 'https://{{gituser}}:{{gitpass}}@github.com/arun-natarajan-sudo/oracle.git'
+            dest: "{{ destdir }}"
