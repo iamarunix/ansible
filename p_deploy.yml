@@ -1,7 +1,7 @@
 # Deploy code by retrieving from Github 
 ---
   - name: Launch HTML application from GitHub Repo
-    hosts: 172.31.11.64
+    hosts: 172.31.x.x
     vars_files:
        - secret.yml
     vars:
